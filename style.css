@@ -1,0 +1,133 @@
+body nav a {
+    font-family: sans-serif;
+    background-color: #e72e2e00;
+    text-decoration: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    -webkit-text-size-adjust: 70%;
+
+}
+
+section {
+    padding: 20px;
+}
+
+
+.text {
+
+    font-family: sans-serif;
+}
+header{
+    background-color: rgb(18, 88, 218);
+    color: #f2f3f5;
+    margin-top: -7.5px;
+    margin-left: -9px;
+}
+
+header.logo_loterica {
+   
+    background-color: rgb(18, 88, 218);
+    color: #f2f3f5;
+    text-align: center;
+    margin-top: -7.5px;
+    margin-left: -9px;
+    width: 100%;
+    position: fixed;
+    
+
+}
+
+
+/*#m
+{
+    background-color: rgb(17, 79, 194);
+    color: #ffffff00;
+    text-align: center;
+    margin-top: 0;
+    width: 100%;
+    position: fixed;
+    
+    
+}
+/
+*/
+
+
+nav {
+    justify-content: space-around;
+    display: flex;
+    background-color: rgb(255, 154, 3);
+    color: #e9e9e9;
+    text-align: center;
+    padding: 0.1em;
+
+}
+
+section {
+    padding: 20px;
+}
+
+#home {
+    margin-top: 0%;
+}
+
+footer {
+    background-color: rgb(17, 79, 194);
+    color: #f06d6d;
+    text-align: center;
+    padding: 1em;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+}
+
+
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    /* Define o modo de escrita vertical da direita para a esquerda */
+    transform: rotate(180deg);
+}
+
+    .maps
+    {
+        border: none;
+    }
+
+    /* th,td {
+        border: 1px solid #ddd;
+        padding: 1px;
+        text-align: center;
+        writing-mode: horizontal-tb;
+    }
+    
+    th {
+        background-color: #f8f9fa;
+        color: #495057;
+    }
+*/
+.img_nomes {
+    max-width: 50px;
+    /* Ajuste o tamanho máximo da imagem conforme necessário */
+    max-height: 50px;
+    display: block;
+    margin: 0 auto;
+}
+
+ /* th {
+    background-color: #ff4102;
+    color: rgb(249, 249, 249);
+}*/
+#ninguemComprou {
+    margin-top: 50px;
+  }
+  #cart{
+    background-color: #0206ff00;
+    color: #000000;
+  }
+  .vertical-text { writing-mode: vertical-rl; transform: rotate(180deg); }
+
+.maps { border: none; }
+
+@media screen and (max-width: 610px) { nav { flex-direction: column; }}

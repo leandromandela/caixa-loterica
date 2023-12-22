@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Compra</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.html">
+</head>
+
+<body class="blue-background">
+  <header>
+    <title>Loteria ROCHA</title>
+
+    <img src="img/loterica_logo.png" alt="logo_loterica">
+
+    <h1>Bolões</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="escolaN.html">Escolha os numeros</a>
+      <a href="login.html">login</a>
+    </nav>
+    <div id="cart">Carrinho: 0 itens</div>
+  </header>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="gallery">
+    <p>Mega da virada - $13</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 1')">
+      <img src="img/1.png" alt="Imagem 1">
+
+    </div>
+    <p>Quina - $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 2')">
+      <img src="img/2.png" alt="Imagem 2">
+
+    </div>
+    <p>Lotofacil - $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 2')">
+      <img src="img/3.png" alt="Imagem 2">
+
+    </div>
+    <p>Mega-Sena - $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 2')">
+      <img src="img/4.png" alt="Imagem 2">
+
+    </div>
+    <p>+Milionaria - $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 2')">
+      <img src="img/5.png" alt="Imagem 2">
+
+    </div>
+    <p>dupla-sena - $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('Imagem 2')">
+      <img src="img/6.png" alt="Imagem 2">
+
+    </div>
+    <p>Timemania- $10</p>
+    <div class="item" onclick="adicionarAoCarrinho('mmmmmmmmmmmmmmmmmmm')">
+      <img src="img/7.png" alt="Imagem 2">
+
+    </div>
+    <!-- Adicione mais imagens conforme necessário -->
+  </div>
+
+  <div id="carrinhoItens">
+    <h2>Itens no Carrinho</h2>
+    <ul id="itensList"></ul>
+    <button onclick="comprar()">Concluir Compra</button>
+  </div>
+  <div id="ninguemComprou">
+    <h2>Nenhum produto comprado ainda.</h2>
+  </div>
+
+  <script src="compra.js"></script>
+</body>
+
+</html>

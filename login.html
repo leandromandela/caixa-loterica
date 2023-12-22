@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="compra.html">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+           background-color: rgb(255, 145, 0);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-image: url(img/loterica_logo.png);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            color: rgb(55, 12, 245);
+            display: block;
+            margin-bottom: 8px;
+        }
+conforme
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #3d91c9;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        
+        <script src="logica.js"></script>
+
+        <label for="username">Nome de usuario:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Senha:</label><br>
+        <input type="password" id="pwd" name="pwd"><br><br>
+
+        <button type="button" onclick="autenticarUsuario()">Entrar</button>
+        
+        <!-- Adicione um link para a página de cadastro -->
+        <a href="cadastro.html"><button type="button">Cadastre-se</button></a>
+
+        
+    </form>
+
+    
+
+</body>
+
+</html>

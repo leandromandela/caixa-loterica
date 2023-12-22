@@ -1,0 +1,13 @@
+  function login(senha) {
+        if (senha == localStorage.getItem("cadastrosenha")) {
+
+            localStorage.setItem("cadastrosenha", senha).value
+        }
+        else {
+            window.alert("Algo deu errado")
+
+        }
+    }
+    login(senha)
+
+

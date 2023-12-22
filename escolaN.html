@@ -1,0 +1,191 @@
+<head>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-gap: 5px;
+        }
+
+        .grid-item {
+            font-size: 12px;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        .available {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .reserved {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .purchased {
+            background-color: #dc3545;
+            color: white;
+        }
+        .reserved {
+            background-color: orange;
+        }
+
+        .available {
+            background-color: rgb(188, 231, 34);
+        }
+        .container {
+    width: 100%;
+    height: 100%;
+}
+
+#seatGrid{
+    width: 10px;
+    height: 20px;
+     
+}
+    </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+<link rel="stylesheet" href="compra.html">
+</head>
+
+<body> 
+    
+    <div id="seatGrid" class="grid-container"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="clearButton">Limprar numeros</button>
+    <button id="purchaseButton">Comprar</button>
+     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+     
+    
+    <script>
+        const reservedSeats = [];
+
+        function reserveSeat(i) {
+            if (!reservedSeats.includes(i)) {
+                reservedSeats.push(i);
+                const seatStatus = document.querySelector(`div[data-seat="${i}"]`);
+                seatStatus.classList.remove('available');
+                seatStatus.classList.add('reserved');
+            } else {
+                reservedSeats.splice(reservedSeats.indexOf(i), 1);
+                const seatStatus = document.querySelector(`div[data-seat="${i}"]`);
+                seatStatus.classList.remove('reserved');
+                seatStatus.classList.add('available');
+            }
+        }
+        function clearSeats() {
+    reservedSeats.length = 0;
+    document.querySelectorAll('.grid-item.reserved').forEach(item => {
+        item.classList.remove('reserved');
+        item.classList.add('available');
+    });
+}
+
+document.getElementById('clearButton').addEventListener('click', clearSeats);
+        function clearReservations() {
+            reservedSeats.length = 0; // remove todas as reservas do array
+
+            const seats = document.querySelectorAll('.grid-item');
+            seats.forEach(seat => {
+                if (!seat.classList.contains('available')) {
+                    seat.classList.remove('reserved');
+                    seat.classList.add('available');
+                }
+            });
+        }
+
+        function purchaseSeats() {
+            const seats = document.querySelectorAll('.grid-item');
+            seats.forEach(seat => {
+                if (seat.classList.contains('reserved')) {
+                    seat.classList.remove('reserved');
+                    seat.classList.add('purchased');
+                }
+            });
+        }
+
+        const seats = 5;
+
+        function createColumns() {
+            const seatGrid = document.getElementById('seatGrid');
+
+            for (let i = 1; i <= seats; i++) {
+                const column = document.createElement('div');
+                column.classList.add('grid-item');
+                column.textContent = i;
+                column.dataset.seat = i;
+
+                column.addEventListener('click', () => reserveSeat(i));
+                seatGrid.appendChild(column);
+            }
+        }
+
+        document.getElementById('clearButton').addEventListener('click', clearReservations);
+        document.getElementById('purchaseButton').addEventListener('click', purchaseSeats);
+        createColumns();const availableSeats = Array.from({length: 50}, (_, i) => i + 1);
+        
+const seatGrid = document.getElementById('seatGrid');
+const clearButton = document.getElementById('clearButton');
+const purchaseButton = document.getElementById('purchaseButton');
+
+
+
+function renderSeatGrid() {
+    seatGrid.innerHTML = '';
+    availableSeats.forEach(i => {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.classList.add('available');
+        gridItem.textContent = i;
+        gridItem.addEventListener('click', () => reserveSeat(i));
+        seatGrid.appendChild(gridItem);
+    });
+}
+
+function reserveSeat(i) {
+    if (!reservedSeats.includes(i)) {
+        reservedSeats.push(i);
+        const seat = seatGrid.querySelector(`.grid-item:nth-child(${i})`);
+        seat.classList.remove('available');
+        seat.classList.add('reserved');
+    }
+}
+
+function purchaseSeats() {
+    reservedSeats.forEach(i => {
+        const seat = seatGrid.querySelector(`.grid-item:nth-child(${i})`);
+        seat.classList.remove('reserved');
+        seat.classList.add('purchased');
+    });
+    reservedSeats = [];
+}
+
+function clearReservedSeats() {
+    reservedSeats.forEach(i => {
+        const seat = seatGrid.querySelector(`.grid-item:nth-child(${i})`);
+        seat.classList.remove('reserved');
+        seat.classList.add('available');
+    });
+    reservedSeats = [];
+}
+
+clearButton.addEventListener('click', clearReservedSeats);
+purchaseButton.addEventListener('click', purchaseSeats);
+
+renderSeatGrid();
+    </script>
+    
+</body>
+
+</html>
